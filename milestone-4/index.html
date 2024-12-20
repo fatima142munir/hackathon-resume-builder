@@ -9,12 +9,11 @@
 <body>
 
     <div class="container">
-        <h1>Resume Builder</h1>
-        
+        <h1 id="heading1">Resume Builder</h1>
         <div class="form-container">
-            <h2>Enter Your Information</h2>
-
+            
             <form id="resumeForm">
+                <h2>Enter Your Information</h2>
                 <div class="input-group">
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" placeholder="Enter your name">
@@ -75,12 +74,15 @@
                 <button type="button" id="generateResumeBtn">Generate Resume</button>
             </form>
         </div>
-        <h2>YOUR RESUME</h2>
+        <h2 id="heading2">YOUR RESUME</h2>
 
         <div id="resumeContainer" contenteditable="true">
             
                 <div id="resumeOutput-left"></div>
                 <div id="resumeOutput-right"></div>
+        </div>
+        <div>
+            <button id="downBtn">Download Resume</button>
         </div>
     </div>
 

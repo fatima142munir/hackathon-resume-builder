@@ -14,8 +14,10 @@ function generateResume() {
     var education = document.getElementById('education').value;
     var linkedIn = document.getElementById('linkedInID').value;
     var careerObj = document.getElementById('careerObj').value;
+    var institute = document.getElementById('institute').value;
+    var year = document.getElementById('year').value;
     // Check if all required fields are filled
-    if (!name || !email || !phone || !inputSkills || !experience || !education || !linkedIn || !pName || !careerObj) {
+    if (!name || !email || !phone || !inputSkills || !experience || !education || !linkedIn || !pName || !careerObj || !institute || !year) {
         alert("Please fill in all fields.");
         return;
     }
@@ -27,7 +29,7 @@ function generateResume() {
     // Display left side of the resume
     resumeOutputLeft.innerHTML = "\n        <div class=\"image\"></div>\n        <h4>Objective</h4>\n        <p>".concat(careerObj, "</p>\n        <h4>Contact</h4>\n        <p><strong>Email:</strong> ").concat(email, "</p>\n        <p><strong>Phone:</strong> ").concat(phone, "</p>\n        <p><strong>LinkedIn:</strong> ").concat(linkedIn, "</p>\n    ");
     // Display right side of the resume
-    resumeOutputRight.innerHTML = "\n        <h1>".concat(name, "</h1>\n        <h3>").concat(pName, "</h3>\n        <h4>Education</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(education, "</p>\n        <h4>Certification</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(certification, "</p>\n        <h4>Experience / Projects</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(experience, "</p>\n        <h4>Skills</h4>\n        <div class=\"separator\"></div>\n    ");
+    resumeOutputRight.innerHTML = "\n        <h1>".concat(name, "</h1>\n        <h3>").concat(pName, "</h3>\n        <h4>Education</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(education, "</p>\n        <p>").concat(institute, "</p>\n        <p>").concat(year, "</p>\n        \n        <h4>Certification</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(certification, "</p>\n        <h4>Experience / Projects</h4>\n        <div class=\"separator\"></div>\n        <p>").concat(experience, "</p>\n        <h4>Skills</h4>\n        <div class=\"separator\"></div>\n    ");
     // Append skills to the right side of resume output
     var skillsContainer = document.createElement("div");
     skills.forEach(function (skill) {
@@ -39,4 +41,15 @@ function generateResume() {
     // Scroll to the resume section itself
     (_a = document.getElementById('resumeContainer')) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
 }
+var downBtn = document.getElementById('downBtn');
+var formCon = document.getElementById('resumeForm');
+var h1 = document.getElementById('heading1');
+var h2 = document.getElementById('heading2');
+downBtn.addEventListener('click', function () {
+    formCon.style.display = "none";
+    h1.style.display = "none";
+    h2.style.display = "none";
+    downBtn.style.display = "none";
+    window.print();
+});
 (_a = document.getElementById('generateResumeBtn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', generateResume);

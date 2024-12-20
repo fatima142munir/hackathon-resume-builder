@@ -74,4 +74,17 @@ function generateResume() {
     document.getElementById('resumeContainer')?.scrollIntoView({ behavior: "smooth" });
 }
 
+const downBtn = document.getElementById('downBtn') as HTMLButtonElement
+const formCon = document.getElementById('resumeForm') as HTMLFormElement
+const h1 = document.getElementById('heading1') as HTMLElement
+const h2 = document.getElementById('heading2') as HTMLElement
+
+downBtn.addEventListener('click', ()=>{
+    formCon.style.display = "none"
+    h1.style.display = "none"
+    h2.style.display = "none"
+    downBtn.style.display = "none"
+    window.print()
+})
+
 document.getElementById('generateResumeBtn')?.addEventListener('click', generateResume);
