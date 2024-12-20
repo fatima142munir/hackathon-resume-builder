@@ -112,6 +112,9 @@ h3{
     border-radius: 50px 8px 8px 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+#resumeOutput-right li{
+    font-size: 14px;
+}
 
 #resumeOutput h3 {
     color: #333;
